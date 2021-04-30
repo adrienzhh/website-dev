@@ -1,0 +1,991 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.1">Jekyll</generator><link href="https://theairlab.org/feed.xml" rel="self" type="application/atom+xml" /><link href="https://theairlab.org/" rel="alternate" type="text/html" /><updated>2021-04-30T21:31:34+00:00</updated><id>https://theairlab.org/feed.xml</id><title type="html">AirLab</title><subtitle>Researching, developing, and testing autonomous flying robots at Carnegie Mellon University
+</subtitle><entry><title type="html">Increasing Energy Productivity of First/Last Mile Goods Movement</title><link href="https://theairlab.org/doe/" rel="alternate" type="text/html" title="Increasing Energy Productivity of First/Last Mile Goods Movement" /><published>2021-04-02T10:50:07+00:00</published><updated>2021-04-02T10:50:07+00:00</updated><id>https://theairlab.org/doe</id><content type="html" xml:base="https://theairlab.org/doe/">&lt;hr /&gt;
+
+&lt;p&gt;The objective of this Department of Energy funded project is to use empirical testing, life cycle assessment, and systems analysis to research and demonstrate energy productivity of goods delivery improvement with drones, delivery robots and driverless cars compared to a baseline network. In addition, the research will develop proof-of-concept testing, model, and simulation for a smart curb space as an intelligently managed urban delivery zone for improved energy productivity and sustainability.&lt;/p&gt;
+
+&lt;p&gt;The project is in collaboration with Environmental Engineering, Sustainability, and Science (EESS) led by Dr Constantine Samaras.&lt;/p&gt;
+
+&lt;p&gt;Some of the current contributions are as follows:&lt;/p&gt;
+
+&lt;!-- &lt;figure&gt;
+ &lt;img src=&quot;/img/posts/2020-02-14-filming/lapse_car_web.jpg&quot; alt=&quot;Drone filming&quot; /&gt;
+ &lt;figcaption&gt;
+ Drone autonomously filming a moving vehicle
+ &lt;/figcaption&gt;
+&lt;/figure&gt; --&gt;
+
+&lt;h2 id=&quot;energy-productivity&quot;&gt;Energy Productivity&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;figure&gt;
+ &lt;img src=&quot;/img/posts/2020-05-02-doe/vtol.gif&quot; style=&quot;width:31%&quot; /&gt;
+  &lt;img src=&quot;/img/posts/2020-05-02-doe/drone.gif&quot; style=&quot;width:31%&quot; /&gt;
+&lt;img src=&quot;/img/posts/2020-05-02-doe/ugv.gif&quot; style=&quot;width:31%&quot; /&gt;
+ &lt;figcaption&gt;
+Platforms used to simulate last mile goods delivery. From left to right: VTOL, Quadrotor, UGV
+ &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The project includes empirical field testing of air and ground delivery vehicles, collection of novel and existing traffic information, and modeling, optimization, and simulation of energy productivity improvements goods delivery. The project developed an open and repeatable experimental protocol for testing energy use of air and ground drones as a function of drone type and operation conditions (payload, velocity, wind, altitude, etc.). The protocol was then used to carry out a flight and ground test campaign wherein critical data like position, velocity, wind and power consumption for multiple simulated last-mile delivery scenarios was recorded to build a first-principles model of the underlying system. Each vehicle carried with it a light-weight low-energy sensor suite that has an ultrasonic anemometer, current and voltage sensors, a GNSS unit and a SBC to sync and record all the data. The sensor suite was integrated in-house and is replicated to maintain data consistency across the test campaigns.  The tests were carried in both autonomous and manual modes to access the effect of autonomy on energy usage.&lt;/p&gt;
+
+&lt;p&gt;More information on and access to the UAV flights dataset can be found through this link: &lt;a href=&quot;https://doi.org/10.1184/R1/12683453.v2&quot;&gt;https://doi.org/10.1184/R1/12683453.v2&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;flight-energy-risk&quot;&gt;Flight Energy Risk&lt;/h2&gt;
+&lt;p&gt;Energy management is a critical aspect of risk assessment for Uncrewed Aerial Vehicle (UAV) flights, as a depleted battery during a flight brings almost guaranteed vehicle damage and a high risk of human injuries or property damage. Predicting the amount of energy a flight will consume is challenging as routing, weather, obstacles, and other factors affect the overall consumption.&lt;/p&gt;
+
+&lt;p&gt;We develop a deep energy model for a UAV that uses Temporal Convolutional Networks to capture the time varying features while incorporating static contextual information. Our energy model is trained on a real world dataset and does not require segregating flights into regimes. We illustrate an improvement in power predictions by 29% on test flights when compared to a state-of-the-art analytical method.&lt;/p&gt;
+
+&lt;div class=&quot;video-wrapper&quot;&gt;&lt;iframe src=&quot;http://www.youtube.com/embed/PHXGigqilOA&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+&lt;p&gt;Using the energy model, we can predict the energy usage for a given trajectory and evaluate the risk of running out of battery during flight. We propose using Conditional Value-at-Risk (CVaR) as a metric for quantifying this risk. We show that CVaR captures the risk associated with worst-case energy consumption on a nominal path by transforming the output distribution of Monte Carlo forward simulations into a risk space. Computing the CVaR on the risk-space distribution provides a metric that can evaluate the overall risk of a flight before take-off. Our energy model and risk evaluation method can improve flight safety and evaluate the coverage area from a proposed takeoff location.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;flying-in-wind&quot;&gt;Flying in Wind&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;It was observed that wind played a signifcant role in affecting the energy use and safety of UAVs. A critical reseach gap was identified in enabling safe low-altitude operation of UAVs in windy urban areas. Two areas were focused on: Predicting global wind fields using onboard sensors and then usign these wind-field estimated to enable wind-aware path planning.&lt;/p&gt;
+
+&lt;h3 id=&quot;wind-field-estimation&quot;&gt;Wind Field Estimation&lt;/h3&gt;
+
+&lt;p&gt;A high-quality estimate of wind fields can potentially improve the safety and performance of Unmanned Aerial Vehicles (UAVs) operating in dense urban areas. Computational Fluid Dynamics (CFD) simulations can help provide a wind field estimate, but their accuracy depends on the knowledge of the distribution of the inlet boundary conditions.&lt;/p&gt;
+
+&lt;p&gt;This work provides a real-time methodology using a Particle Filter (PF) that utilizes wind measurements from a UAV to solve the inverse problem of predicting the inlet conditions as the UAV traverses the flow field. A Gaussian Process Regression (GPR) approach is used as a surrogate function to maintain the real-time nature of the proposed methodology.&lt;/p&gt;
+
+&lt;div class=&quot;video-wrapper&quot;&gt;&lt;iframe src=&quot;http://www.youtube.com/embed/U4XdYgSJRZM&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+&lt;p&gt;Real-world experiments with a UAV at an urban test-site prove the efficacy of the proposed method.
+The flight test shows that the 95% confidence interval for the difference between the mean estimated inlet conditions and mean ground truth measurements closely bound zero, with the difference in mean angles being between -3.680 degrees and 1.250 degrees and the difference in mean magnitudes being between -0.206 m/s and 0.020 m/s.&lt;/p&gt;
+
+&lt;h3 id=&quot;wind-aware-path-planning&quot;&gt;Wind-Aware Path Planning&lt;/h3&gt;
+
+&lt;p&gt;A key challenge in enabling autonomous Unmanned Aerial Vehicles (UAVs) to operate in cluttered urban environments is to plan collision-free, smooth, dynamically feasible trajectories between two locations with the wind in real-time. This work presents a novel path planning strategy using sampling-based planning that uses a two-point boundary value problem (BVP) to connect states in the presence of wind. Unlike most approaches that use a curvature discontinuous solution, the proposed BVP is formulated as a nonlinear constrained optimization problem with curvature and curvature-rate continuous profile to generate smoother trajectories.&lt;/p&gt;
+&lt;figure&gt;
+ &lt;img src=&quot;/img/posts/2020-05-02-doe/first2.png&quot; alt=&quot;Planning&quot; style=&quot;width:70%&quot; /&gt;
+ &lt;figcaption&gt;
+Figure shows a representative path planning scenario where blue lines indicate the BVP surrogate solutions chosen from the precomputed library, red indicates the wind-corrected solutions used for sampling-based planning algorithm (BIT*) and black lines represent the repaired final trajectory.
+ &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;To achieve real-time performance, our method involves using surrogate solutions from a pre-calculated library while solving the planning problem and then running a repair routine to generate the final trajectory. To prove the feasibility of the offline-online strategy, simulation results on a 3D model of an actual city block with a realistic wind-field are presented. Results with a trochoid-based BVP solver are also presented for comparison. For the given simulation scenario, we could demonstrate a 93% success rate for the algorithm in finding a valid trajectory.&lt;/p&gt;
+
+&lt;figure&gt;
+ &lt;img src=&quot;/img/posts/2020-05-02-doe/flow.png&quot; style=&quot;width:70%&quot; /&gt;
+ &lt;figcaption&gt;
+Overview of the Proposed Approach
+ &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;publications&quot;&gt;Publications&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Arnav Choudhry, Brady Moon, Jay Patrikar, Constantine Samaras, and Sebastian Scherer, “&lt;strong&gt;CVaR-Based Flight Energy Risk Assessment for Multirotor UAVs Using a Deep Energy Model&lt;/strong&gt;”, IEEE International Conference on Robotics and Automation (ICRA), 2021&lt;/li&gt;
+  &lt;li&gt;Thiago A. Rodrigues, Jay Patrikar, Arnav Choudhry, Jacob Feldgoise, Vaibhav Arcot, Aradhana Gahlaut, Sophia Lau, Brady Moon, Bastian Wagner, H. Scott Matthews, Sebastian Scherer, and Constantine Samaras, “&lt;strong&gt;In-flight positional and energy use data set of a DJI Matrice 100 quadcopter for small package delivery&lt;/strong&gt;”, Submitted to Scientific Data, 2021&lt;/li&gt;
+  &lt;li&gt;Jay Patrikar, Brady G. Moon, Sebastian Scherer, “&lt;strong&gt;Wind and the City: Utilizing UAV-Based In-Situ Measurements for Estimating Urban Wind Fields&lt;/strong&gt;”, International Conference on Intelligent Robots and Systems (IROS), 2020&lt;/li&gt;
+  &lt;li&gt;Jay Patrikar, Vishal Dugar, Vaibhav Arcot, Sebastian Scherer, “&lt;strong&gt;Real-time Motion Planning of Curvature Continuous Trajectories for Urban UAV Operations in Wind&lt;/strong&gt;” International Conference on Unmanned Aircraft Systems (ICUAS), 2020&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;project-members&quot;&gt;Project Members&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;permanent&quot;&gt;Permanent&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Dr. Costa Samaras&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/team/sebastian/&quot;&gt;Dr. Sebastian Scherer&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/team/jay/&quot;&gt;Jay Patrikar&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/team/bradym/&quot;&gt;Brady Moon&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Arnav Choudhry&lt;/li&gt;
+  &lt;li&gt;Thiago Rodrigues&lt;/li&gt;
+  &lt;li&gt;Jacob Feldgoise&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;visiting&quot;&gt;Visiting&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Bastian Wagner&lt;/li&gt;
+  &lt;li&gt;Vaibhav Arcot&lt;/li&gt;
+  &lt;li&gt;Aradhana Gehlot&lt;/li&gt;
+  &lt;li&gt;Sophia Lau&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- ### Publications
+* R. Bonatti, W. Wang, C. Ho, A. Ahuja, M. Gschwindt, E. Camci, E. Kayacan, S. Choudhury, S. Scherer, &quot;Autonomous Aerial Cinematography Among Unstructured Environments With Learned Artistic Decision-Making&quot;. Journal of Field Robotics, 2019 [[Link](https://onlinelibrary.wiley.com/doi/epdf/10.1002/rob.21931)][[PDF](https://www.cs.cmu.edu/~rbonatti/files/bonatti_jfr.pdf)][[Video](https://youtu.be/ookhHnqmlaU)] --&gt;</content><author><name>Jay Patrikar and Brady Moon</name></author><category term="research" /><summary type="html">The objective of this Department of Energy funded project is to use empirical testing, life cycle assessment, and systems analysis to research and demonstrate energy productivity of goods delivery improvement with drones, delivery robots and driverless cars compared to a baseline network. In addition, the research will develop proof-of-concept testing, model, and simulation for a smart curb space as an intelligently managed urban delivery zone for improved energy productivity and sustainability.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://theairlab.org/img/posts/2020-05-02-doe/cover4.gif" /><media:content medium="image" url="https://theairlab.org/img/posts/2020-05-02-doe/cover4.gif" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Fully-Actuated UAVs: Control, Analysis and Applications</title><link href="https://theairlab.org/fully-actuated/" rel="alternate" type="text/html" title="Fully-Actuated UAVs: Control, Analysis and Applications" /><published>2021-03-10T10:50:07+00:00</published><updated>2021-03-10T10:50:07+00:00</updated><id>https://theairlab.org/fully-actuated</id><content type="html" xml:base="https://theairlab.org/fully-actuated/">&lt;p&gt;The introduction of fully-actuated multirotors has opened the door to new possibilities and more efficient solutions to many real-world applications. However, their integration had been slower than expected, partly due to the need for new tools to take full advantage of these robots. In our research we aim to come up with innovative ideas to accelerate the integration of these new flying robots into the real world and push the boundaries of technology to develop new applications that have previously deemed impossible.&lt;/p&gt;
+
+&lt;p&gt;As far as we know, all the groups currently working on the fully-actuated multirotors develop new full-pose (6-D) tools and methods to use their robots, which is inefficient, time-consuming, and requires many resources. As the first step towards our goal, we have proposed a way of bridging the gap between the tools already available for underactuated robots and the new fully-actuated vehicles. The approach can extend the existing underactuated flight controllers to support the fully-actuated robots, or enhance the existing fully-actuated controllers to support existing underactuated flight stacks. We have introduced attitude strategies that work with the underactuated controllers, tools, planners and remote control interfaces, all while allowing taking advantage of the full actuation. Moreover, new methods are proposed that can properly handle the limited lateral thrust suffered by many fully-actuated UAV designs. The strategies are lightweight, simple, and allow rapid integration of the available tools with these new vehicles for the fast development of new real-world applications.&lt;/p&gt;
+
+&lt;p&gt;The following video is from the paper submitted to IROS 2021 (under review) that shows the general idea of the new controller design.&lt;/p&gt;
+
+&lt;div class=&quot;video-wrapper&quot;&gt;&lt;iframe src=&quot;http://www.youtube.com/embed/lZ3ye1il0W0&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+&lt;p&gt;The real experiments on our robots and simulations on several UAV architectures with different underlying controller methods show how these strategies can be utilized to extend existing flight controllers for fully-actuated applications. We have provided the source code for the PX4 firmware enhanced with our proposed methods to showcase an example flight controller for underactuated multirotors that can be modified to seamlessly support fully-actuated vehicles while retaining the rest of the flight stack unchanged.&lt;/p&gt;
+
+&lt;p&gt;Furthermore, we have been analyzing the properties and abilities of the fully-actuated multirotors and their controllers. For this purpose we have implemented a new simulator that can be used to improve the architectural designs, implement new control ideas and determine the extent that each design and controller can be used for differen tasks. The following video shows the simulator for a motion/force control task of drawing on the wall.&lt;/p&gt;
+
+&lt;div class=&quot;video-wrapper&quot;&gt;&lt;iframe src=&quot;http://www.youtube.com/embed/7RNiUFTMjks&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+&lt;p&gt;The source code for the simulator will be shared in the coming months.&lt;/p&gt;
+
+&lt;h3 id=&quot;education&quot;&gt;Education&lt;/h3&gt;
+
+&lt;p&gt;In summer 2020, the AirLab held an &lt;a href=&quot;http://theairlab.org/summer2020&quot;&gt;online summer shcool&lt;/a&gt;. In the control and modeling section we used the basic version of our simulator for hands-on exercises. The session includes a quick overview of control and modeling for people who are already familiar with UAVs but have never learned the UAV control. It further extends into fully-actuated robots and also includes exercises on the fixed-tilt fully-actuated robots. You can access the source code, the recorded presentation and the slides from &lt;a href=&quot;http://theairlab.org/summer2020/#3.6&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;source-code&quot;&gt;Source Code&lt;/h3&gt;
+
+&lt;p&gt;The source code for the PX4 autopilot modified to work with fully-actuated robots and enhanced with our thrust and attitude strategies can be found &lt;a href=&quot;https://github.com/castacks/PX4-fully-actuated&quot;&gt;here&lt;/a&gt;. Note that the code has been published with our ICRA 2021 paper (under review). For the correct citation, please see the Publications section below.&lt;/p&gt;
+
+&lt;h3 id=&quot;publications&quot;&gt;Publications&lt;/h3&gt;
+
+&lt;p&gt;The general ideas on how to simplify the integration of fully-actuated UAVs into real-world applications and how to allow their interaction with the already-available tools, along with the sets of attitude and thrust strategies are described in the following publication (access on &lt;a href=&quot;https://arxiv.org/abs/2011.06666&quot;&gt;arXiv&lt;/a&gt;):&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;BibTeX:&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@article{keipour:iros:2021,
+author={Azarakhsh Keipour and Mohammadreza Mousaei and Andrew Ashley and Sebastian Scherer},
+booktitle={2021 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+title={Integration of Fully-Actuated Multirotors into Real-World Applications}, 
+year={in press},
+pages={1-8},
+link={https://arxiv.org/abs/2011.06666},
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;IEEE Style:&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;A. Keipour, M. Mousaei, A. Ashley, and S. Scherer, “Integration of Fully-Actuated Multirotors into Real-World Applications,” 2021 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), Under review. 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;contact&quot;&gt;Contact&lt;/h3&gt;
+
+&lt;p&gt;Azarakhsh Keipour - (keipour [at] cmu [dot] edu)&lt;/p&gt;
+
+&lt;p&gt;Sebastian Scherer - (basti [at] cmu [dot] edu)&lt;/p&gt;
+
+&lt;h3 id=&quot;acknowledgments&quot;&gt;Acknowledgments&lt;/h3&gt;
+
+&lt;p&gt;This work was supported through NASA Grant Number 80NSSC19C010401.&lt;/p&gt;</content><author><name>Azarakhsh Keipour</name></author><category term="research" /><summary type="html">The introduction of fully-actuated multirotors has opened the door to new possibilities and more efficient solutions to many real-world applications. However, their integration had been slower than expected, partly due to the need for new tools to take full advantage of these robots. In our research we aim to come up with innovative ideas to accelerate the integration of these new flying robots into the real world and push the boundaries of technology to develop new applications that have previously deemed impossible.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://theairlab.org/img/posts/2020-11-11-fully-actuated/fully-actuated.jpg" /><media:content medium="image" url="https://theairlab.org/img/posts/2020-11-11-fully-actuated/fully-actuated.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">ORStereo: Occlusion-Aware Recurrent Stereo Matching for 4K-Resolution Images</title><link href="https://theairlab.org/orstereo/" rel="alternate" type="text/html" title="ORStereo: Occlusion-Aware Recurrent Stereo Matching for 4K-Resolution Images" /><published>2021-03-05T02:23:37+00:00</published><updated>2021-03-05T02:23:37+00:00</updated><id>https://theairlab.org/orstereo</id><content type="html" xml:base="https://theairlab.org/orstereo/">&lt;p&gt;This is the project page of the IROS submission “ORStereo: Occlusion-Aware Recurrent Stereo Matching for 4K-Resolution Images”&lt;/p&gt;
+
+&lt;div class=&quot;video-wrapper&quot;&gt;&lt;iframe src=&quot;http://www.youtube.com/embed/X7j2-vkyZ9A&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;overview&quot;&gt;Overview&lt;/h3&gt;
+
+&lt;p&gt;Stereo reconstruction models trained on small images do not generalize well to high-resolution data. Training a model on high-resolution image size faces difficulties of data availability and is often infeasible due to limited computing resources. In this work, we present the Occlusion-aware Recurrent binocular Stereo matching (ORStereo), which deals with these issues by only training on available low disparity range stereo images. ORStereo generalizes to unseen high-resolution images with large disparity ranges by formulating the task as residual updates and refinements of an initial prediction. ORStereo is trained on images with disparity ranges limited to 256 pixels, yet it can operate 4K-resolution input with over 1000 disparities using limited GPU memory. We test the model’s capability on both synthetic and real-world high-resolution images. Experimental results demonstrate that ORStereo achieves comparable performance on 4K-resolution images compared to state-of-the-art methods trained on large disparity ranges. Compared to other methods that are only trained on low-resolution images, our method is 70% more accurate on 4K-resolution images.&lt;/p&gt;
+
+&lt;h3 id=&quot;4k-resolution-stereo-dataset&quot;&gt;4K-resolution stereo dataset&lt;/h3&gt;
+
+&lt;p&gt;We collected a set of 4K-resolution stereo images for evaluating ORStereo’s performance on high-resolution data. These images and ground truth data will be made publicly available. The images are collected in various simulated environments rendered by the Unreal Engine and the AirSim plugin. 100 pairs of photo-realistic stereo images from 7 indoor and outdoor scenes are collected. We set up a virtual stereo camera with a baseline of 0.38m. In 3 of the 7 scenes, the cameras have a horizontal viewing angle of 46 degrees. For the remaining 4 scenes, the horizontal viewing angle is 60 degrees. The image size of the virtual camera is 4112x3008 pixels. These camera parameters are selected to match the real-world sensor that we are using for data collection. The AirSim plugin provides us with a depth image for every captured RGB image. We compute the true disparities and occlusion masks from the depth images.&lt;/p&gt;
+
+&lt;figure&gt;
+ &lt;img src=&quot;/img/posts/2021-03-05-orstereo/Grid_Scaled.png&quot; alt=&quot;The collected 4K-resolution iamges&quot; /&gt;
+ &lt;figcaption&gt;Samples of the collected 4K-resolution images. The columns are the individual environments and there are 3 samples for each. The even-number rows are the disparities with occlusion. The 7 environments have different themes. From left to right: factory district, artistic architecture, indoor restaurant, underground work zone, indoor supermarket, train station, and city ruins. The first 3 columns are from the virtual camera with 46 degrees of horizontal viewing angle. The other 4 columns are from the 60 degrees camera.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The following figure shows another pair of the collected stereo images in detail. Note that all disparities and occlusion masks are associated with the left image.&lt;/p&gt;
+
+&lt;figure&gt;
+ &lt;img src=&quot;/img/posts/2021-03-05-orstereo/single_sample_4K_dataset_scaled.png&quot; alt=&quot;A detailed sample 4K-resolution testing case&quot; /&gt;
+ &lt;figcaption&gt;A detailed sample from the collected 4K-resolution stereo images. From left to right: the left image, right image, disparity, and occlusion mask. The disparity is computed from the depth provided by AirSim. The occlusion mask is obtained by comparing the depth images from both the cameras with exact extrinsic parameters.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&quot;access-the-4k-resolution-dataset&quot;&gt;Access the 4K-resolution dataset&lt;/h3&gt;
+
+&lt;p&gt;All of the stereo images, together with the true disparity and occlusion mask are available &lt;a href=&quot;https://cmu.box.com/s/eepyd7fpjzwdjqlz3507wxbzec50cd8i&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Concerning the large file size of a 4K-resolution floating point image, we save the disparity as compressed PNG files in RGBA format. We provide a simple Python function to read the floating point disparity back from those PNG files. Access the code &lt;a href=&quot;https://github.com/castacks/iros_2021_orstereo&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;more-results&quot;&gt;More results&lt;/h3&gt;
+
+&lt;h4 id=&quot;results-on-the-scene-flow-dataset&quot;&gt;Results on the Scene Flow dataset&lt;/h4&gt;
+
+&lt;p&gt;When trained on the Scene Flow dastaset only, ORStereo achieves similar EPE value (0.74)
+among the state-of-the-art models trained with low-resolution data.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;MCUA&lt;sup id=&quot;fnref:nie2019multilevel&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:nie2019multilevel&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Bi3D&lt;sup id=&quot;fnref:badki2020bi3d&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:badki2020bi3d&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;GwcNet&lt;sup id=&quot;fnref:guo2019group&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:guo2019group&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;FADNet&lt;sup id=&quot;fnref:wang2020fadnet&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:wang2020fadnet&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;GA-Net&lt;sup id=&quot;fnref:zhang2019ganet&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:zhang2019ganet&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0.56&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0.73&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0.77&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0.83&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0.84&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;WaveletStereo&lt;sup id=&quot;fnref:yang2020waveletstereo&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:yang2020waveletstereo&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;DeepPruner&lt;sup id=&quot;fnref:duggal2019deeppruner&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:duggal2019deeppruner&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;7&lt;/a&gt;&lt;/sup&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;SSPCV-Net&lt;sup id=&quot;fnref:wu2019semantic&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:wu2019semantic&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;8&lt;/a&gt;&lt;/sup&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;AANet&lt;sup id=&quot;fnref:xu2020aanet&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:xu2020aanet&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;9&lt;/a&gt;&lt;/sup&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;ORStereo (ours)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0.84&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0.86&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0.87&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0.87&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0.74&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;When working on low-resolution inputs such as the Scene Flow dataset, ORStereo only goes through the first phase. Two sample results are shown as follows.&lt;/p&gt;
+
+&lt;figure&gt;
+ &lt;img src=&quot;/img/posts/2021-03-05-orstereo/scene_flow.png&quot; alt=&quot;Sample results on the Scene Flow dataset&quot; /&gt;
+ &lt;figcaption&gt;Two testing result samples on the Scene Flow dataset.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;In the previous image:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;a, b) Left and right images.&lt;/li&gt;
+  &lt;li&gt;c, d) True disparity and prediction after NLR.&lt;/li&gt;
+  &lt;li&gt;e, f) True disparity and prediction before NLR.&lt;/li&gt;
+  &lt;li&gt;g, h) True disparity and prediction by RRU.&lt;/li&gt;
+  &lt;li&gt;i, j) True disparity and prediction by BDE.&lt;/li&gt;
+  &lt;li&gt;k, l) True occlusion and prediction by BME.&lt;/li&gt;
+  &lt;li&gt;m, n) True occlusion and prediction by RRU.&lt;/li&gt;
+  &lt;li&gt;The numbers on the predicted disparities are the EPE and standard deviation.&lt;/li&gt;
+  &lt;li&gt;The true and predicted disparity values are all scaled according to the sizes of the feature levels. E.g., g) has a magnitude 1/2 of e) or c). The full-resolution versions of this figure can be found &lt;a href=&quot;https://cmu.box.com/s/eepyd7fpjzwdjqlz3507wxbzec50cd8i&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;results-on-the-middlebury-dataset&quot;&gt;Results on the Middlebury dataset&lt;/h4&gt;
+
+&lt;p&gt;ORStereo acheives better accuracy on full resolution benchmark than the state-of-the-art models that trained on low-resolution data. Note that HSM is trained on high-resolution data.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Model &amp;amp; scale&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;AANet&lt;sup id=&quot;fnref:xu2020aanet:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:xu2020aanet&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;9&lt;/a&gt;&lt;/sup&gt; 1/2&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;DeepPruner&lt;sup id=&quot;fnref:duggal2019deeppruner:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:duggal2019deeppruner&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;7&lt;/a&gt;&lt;/sup&gt; 1/4&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;SGBMP&lt;sup id=&quot;fnref:hu2020deep&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:hu2020deep&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;10&lt;/a&gt;&lt;/sup&gt; full&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;ORStereo (ours) full&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;HSM&lt;sup id=&quot;fnref:yang2019hierarchical&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:yang2019hierarchical&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;11&lt;/a&gt;&lt;/sup&gt; full&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;EPE&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;6.37&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4.80&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;7.58&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3.23&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2.07&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;We have submitted our results to the Middlebury evaluation page. &lt;a href=&quot;https://vision.middlebury.edu/stereo/eval3/&quot;&gt;Check out our results under the name ORStereo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;results-on-4k-resolution-stereo-images&quot;&gt;Results on 4K-resolution stereo images&lt;/h4&gt;
+
+&lt;p&gt;ORStereo achieves the best EPE among all the related state-of-the-art models including the HSM, which is a model trained on high-resolution data.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Model&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Scale&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Range&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;EPE&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;GPU Memory (MB)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;AANet&lt;sup id=&quot;fnref:xu2020aanet:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:xu2020aanet&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;9&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1/8&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;192&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;9.96&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;8366&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;DeepPruner&lt;sup id=&quot;fnref:duggal2019deeppruner:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:duggal2019deeppruner&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;7&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1/8&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;192&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;8.31&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4196&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;SGBMP&lt;sup id=&quot;fnref:hu2020deep:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:hu2020deep&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;10&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;256&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4.21&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3386&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;ORStereo (ours)&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;1&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;256&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;2.37&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;2059&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;HSM&lt;sup id=&quot;fnref:yang2019hierarchical:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:yang2019hierarchical&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;11&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1/2&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;768&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2.41&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3405&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The following figures are the sample cases shown in the submitted paper.&lt;/p&gt;
+
+&lt;figure&gt;
+ &lt;img src=&quot;/img/posts/2021-03-05-orstereo/fov46_000032_annotated.png&quot; alt=&quot;Sample results on 4K-resolution case fov46_000032&quot; /&gt;
+ &lt;img src=&quot;/img/posts/2021-03-05-orstereo/fov60_000071_annotated.png&quot; alt=&quot;Sample results on 4K-resolution case fov60_000071&quot; /&gt;
+ &lt;caption&gt;Results on 4K-resolution stereo images. a) the left image. b, c) the disparity and error of the first phase. d) the true disparity. e, f) the disparity and error of the second phase. Note that the error gets improved in the second phase.&lt;/caption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The full resolution version of the previous two figures are available &lt;a href=&quot;https://cmu.box.com/s/eepyd7fpjzwdjqlz3507wxbzec50cd8i&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;manuscript&quot;&gt;Manuscript&lt;/h3&gt;
+
+&lt;p&gt;Please refer to this &lt;a href=&quot;https://arxiv.org/abs/2103.07798&quot;&gt;arXiv link&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@misc{hu2021orstereo,
+      title={ORStereo: Occlusion-Aware Recurrent Stereo Matching for 4K-Resolution Images}, 
+      author={Yaoyu Hu and Wenshan Wang and Huai Yu and Weikun Zhen and Sebastian Scherer},
+      year={2021},
+      eprint={2103.07798},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;contact&quot;&gt;Contact&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Yaoyu Hu: yaoyuh@andrew.cmu.edu&lt;/li&gt;
+  &lt;li&gt;Sebastian Scherer: (basti [at] cmu [dot] edu)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;acknowledgments&quot;&gt;Acknowledgments&lt;/h3&gt;
+
+&lt;p&gt;This work was supported by Shimizu Corporation.&lt;/p&gt;
+
+&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:nie2019multilevel&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Nie, Guang-Yu, Ming-Ming Cheng, Yun Liu, Zhengfa Liang, Deng-Ping Fan, Yue Liu, and Yongtian Wang. “Multi-level context ultra-aggregation for stereo matching.” In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 3283-3291. 2019. &lt;a href=&quot;#fnref:nie2019multilevel&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:badki2020bi3d&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Badki, Abhishek, Alejandro Troccoli, Kihwan Kim, Jan Kautz, Pradeep Sen, and Orazio Gallo. “Bi3d: Stereo depth estimation via binary classifications.” In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 1600-1608. 2020. &lt;a href=&quot;#fnref:badki2020bi3d&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:guo2019group&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Guo, Xiaoyang, Kai Yang, Wukui Yang, Xiaogang Wang, and Hongsheng Li. “Group-wise correlation stereo network.” In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 3273-3282. 2019. &lt;a href=&quot;#fnref:guo2019group&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:wang2020fadnet&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Wang, Qiang, Shaohuai Shi, Shizhen Zheng, Kaiyong Zhao, and Xiaowen Chu. “FADNet: A Fast and Accurate Network for Disparity Estimation.” In 2020 IEEE International Conference on Robotics and Automation (ICRA), pp. 101-107. IEEE, 2020. &lt;a href=&quot;#fnref:wang2020fadnet&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:zhang2019ganet&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Zhang, Feihu, Victor Prisacariu, Ruigang Yang, and Philip HS Torr. “Ga-net: Guided aggregation net for end-to-end stereo matching.” In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 185-194. 2019. &lt;a href=&quot;#fnref:zhang2019ganet&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:yang2020waveletstereo&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Yang, Menglong, Fangrui Wu, and Wei Li. “Waveletstereo: Learning wavelet coefficients of disparity map in stereo matching.” In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, pp. 12885-12894. 2020. &lt;a href=&quot;#fnref:yang2020waveletstereo&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:duggal2019deeppruner&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Duggal, Shivam, Shenlong Wang, Wei-Chiu Ma, Rui Hu, and Raquel Urtasun. “Deeppruner: Learning efficient stereo matching via differentiable patchmatch.” In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 4384-4393. 2019. &lt;a href=&quot;#fnref:duggal2019deeppruner&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:duggal2019deeppruner:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:duggal2019deeppruner:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:wu2019semantic&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Wu, Zhenyao, Xinyi Wu, Xiaoping Zhang, Song Wang, and Lili Ju. “Semantic stereo matching with pyramid cost volumes.” In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 7484-7493. 2019. &lt;a href=&quot;#fnref:wu2019semantic&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:xu2020aanet&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Xu, Haofei, and Juyong Zhang. “Aanet: Adaptive aggregation network for efficient stereo matching.” In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 1959-1968. 2020. &lt;a href=&quot;#fnref:xu2020aanet&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:xu2020aanet:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:xu2020aanet:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:hu2020deep&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Hu, Yaoyu, Weikun Zhen, and Sebastian Scherer. “Deep-learning assisted high-resolution binocular stereo depth reconstruction.” In 2020 IEEE International Conference on Robotics and Automation (ICRA), pp. 8637-8643. IEEE, 2020. &lt;a href=&quot;#fnref:hu2020deep&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:hu2020deep:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:yang2019hierarchical&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Yang, Gengshan, Joshua Manela, Michael Happold, and Deva Ramanan. “Hierarchical deep stereo matching on high-resolution images.” In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 5515-5524. 2019. &lt;a href=&quot;#fnref:yang2019hierarchical&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:yang2019hierarchical:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Yaoyu Hu</name></author><category term="research" /><summary type="html">This is the project page of the IROS submission “ORStereo: Occlusion-Aware Recurrent Stereo Matching for 4K-Resolution Images”</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://theairlab.org/img/posts/2021-03-05-orstereo/iros2021_2.gif" /><media:content medium="image" url="https://theairlab.org/img/posts/2021-03-05-orstereo/iros2021_2.gif" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Yamaha-CMU Off-Road Dataset</title><link href="https://theairlab.org/yamaha-offroad-dataset/" rel="alternate" type="text/html" title="Yamaha-CMU Off-Road Dataset" /><published>2021-02-01T13:17:07+00:00</published><updated>2021-02-01T13:17:07+00:00</updated><id>https://theairlab.org/yamaha-offroad-dataset</id><content type="html" xml:base="https://theairlab.org/yamaha-offroad-dataset/">&lt;p&gt;We have collected Yamaha-CMU-Off-Road, or YCOR, which consists of 1076 images collected in four different locations in Western Pennsylvania and Ohio (as shown in the figure), spanning three different seasons.&lt;/p&gt;
+
+&lt;p&gt;The dataset was labelled using a polygon-based interface with eight classes: sky, rough trail, smooth trail, traversable grass, high vegetation, non-traversable low vegetation, obstacle. 
+The polygon labels were post-processed using a Dense CRF to densify the labels; the output of the CRF was manually inspected, and in some cases corrected, to ensure no wrong labels were created.&lt;/p&gt;
+
+&lt;p&gt;We believe our dataset is more diverse and challenging than DeepScene. In the following figure, we show the mean RGB image and pixelwise labelmode of each dataset. The DeepScene dataset shows a left-right bias and more predictable structure than ours; if we used the pixelwise mode as a baseline classifier, we would obtain 0.30 pixelwise error-rate in DeepScene, but 0.51 in ours. However, we acknowledge that compared to recent efforts, both datasets are relatively small.&lt;/p&gt;
+
+&lt;figure&gt;
+ &lt;img src=&quot;/img/posts/2021-02-01-offroad/dataset_features.png&quot; alt=&quot;Data and segmentation labels&quot; /&gt;
+ &lt;figcaption&gt;
+ First two columns: A comparison of dataset statistics. We show the mean RGB frame and the pixelwise mode for the labelled frames in the training sets of each dataset used. Last column: a map with locations where YCOR was collected.
+ &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Our current split has 931 training images, and 145 validation images. This split was generated randomly, ensuring there was no overlap in data collection session between images in the training and validation split. However, there is overlap in locations used.&lt;/p&gt;
+
+&lt;figure&gt;
+ &lt;img src=&quot;/img/posts/2021-02-01-offroad/dataglance.png&quot; alt=&quot;Data and segmentation labels&quot; /&gt;
+ &lt;figcaption&gt;
+ A glance of the dataset.
+ &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;citation&quot;&gt;Citation&lt;/h2&gt;
+
+&lt;p&gt;Please read our &lt;a href=&quot;https://www.ri.cmu.edu/wp-content/uploads/2017/11/semantic-mapping-offroad-nav-compressed.pdf&quot;&gt;paper&lt;/a&gt; for details.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@inproceedings{maturana2018real,
+  title={Real-time semantic mapping for autonomous off-road navigation},
+  author={Maturana, Daniel and Chou, Po-Wei and Uenoyama, Masashi and Scherer, Sebastian},
+  booktitle={Field and Service Robotics},
+  pages={335--350},
+  year={2018},
+  organization={Springer}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
+
+&lt;p&gt;The dataset can be downloaded &lt;a href=&quot;https://cmu.box.com/s/3fngoljhcwhqf2z5cbepufh331qtesxt&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;contact&quot;&gt;Contact&lt;/h3&gt;
+
+&lt;p&gt;Sebastian Scherer - (basti [at] cmu [dot] edu)&lt;/p&gt;
+
+&lt;p&gt;Wenshan Wang - (wenshanw [at] andrew [dot] cmu [dot] edu)&lt;/p&gt;
+
+&lt;h3 id=&quot;term-of-use&quot;&gt;Term of use&lt;/h3&gt;
+
+&lt;p&gt;&lt;a rel=&quot;license&quot; href=&quot;http://creativecommons.org/licenses/by/4.0/&quot;&gt;&lt;img alt=&quot;Creative Commons License&quot; style=&quot;border-width:0&quot; src=&quot;https://i.creativecommons.org/l/by/4.0/80x15.png&quot; /&gt;&lt;/a&gt;&lt;br /&gt;This work is licensed under a &lt;a rel=&quot;license&quot; href=&quot;http://creativecommons.org/licenses/by/4.0/&quot;&gt;Creative Commons Attribution 4.0 International License&lt;/a&gt;.&lt;/p&gt;</content><author><name>Wenshan Wang</name></author><category term="datasets" /><summary type="html">We have collected Yamaha-CMU-Off-Road, or YCOR, which consists of 1076 images collected in four different locations in Western Pennsylvania and Ohio (as shown in the figure), spanning three different seasons.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://theairlab.org/img/posts/2021-02-01-offroad/web_cover_figure.png" /><media:content medium="image" url="https://theairlab.org/img/posts/2021-02-01-offroad/web_cover_figure.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">TartanVO: A Generalizable Learning-based VO</title><link href="https://theairlab.org/tartanvo/" rel="alternate" type="text/html" title="TartanVO: A Generalizable Learning-based VO" /><published>2020-12-13T13:13:37+00:00</published><updated>2020-12-13T13:13:37+00:00</updated><id>https://theairlab.org/tartanvo</id><content type="html" xml:base="https://theairlab.org/tartanvo/">&lt;p&gt;Visual odometry remains a challenging problem in real-world applications. Geometric-based methods are not robust enough to many real-life factors, including illumination change, bad weather, dynamic objects, and aggressive motion. Learning-based methods do not generalize well and have only been trained and tested on the same dataset.&lt;/p&gt;
+
+&lt;figure&gt;
+ &lt;img src=&quot;/img/posts/2020-12-13-tartanvo/tartanvo_1.gif&quot; alt=&quot;Geometry-based methods&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;It is widely accepted that by leveraging a large amount of data, deep-neural-network-based methods can learn a better feature extractor than engineered ones, resulting in a more capable and robust model. But why haven’t we seen the deep learning models outperform geometry-based methods and work on all kind of datasets yet? We argue that there are two main reasons. First, &lt;b&gt; the existing VO models are trained with insufficient diversity&lt;/b&gt;, which is critical for learning-based methods to be able to generalize. By diversity, we mean diversity both in the scenes and motion patterns. For example, a VO model trained only on outdoor scenes is unlikely to be able to generalize to an indoor environment. Similarly, a model trained with data collected by a camera fixed on a ground robot, with limited pitch and roll motion, will unlikely be applicable to drones. Second, &lt;b&gt;most of the current learning-based VO models neglect some fundamental nature of the problem which is well formulated in geometry-based VO theories&lt;/b&gt;. From the theory of multi-view geometry, we know that recovering the camera pose from a sequence of monocular images has scale ambiguity. Besides, recovering the pose needs to take account of the camera intrinsic parameters. Without explicitly dealing with the scale problem and the camera intrinsics, a model learned from one dataset would likely fail in another dataset, no matter how good the feature extractor is.&lt;/p&gt;
+
+&lt;p&gt;To this end, we propose a learning-based method that can solve the above two problems and can generalize across datasets. Our contributions come in three folds.&lt;/p&gt;
+
+&lt;p&gt;1). We demonstrate the crucial effects of data diversity on the generalization ability of a VO model by comparing performance on different quantities of training data.&lt;/p&gt;
+
+&lt;figure&gt;
+ &lt;img src=&quot;/img/posts/2020-12-13-tartanvo/diverse.png&quot; alt=&quot;diversity&quot; /&gt;
+ &lt;figcaption&gt;
+  Generalization ability with respect to different quantities of training data. Blue: training loss, orange: testing loss on three unseen environments. Testing loss drops constantly with increasing quantity of training data.
+ &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;2). We design an up-to-scale loss function to deal with the scale ambiguity of monocular VO.&lt;/p&gt;
+
+&lt;figure&gt;
+ &lt;img src=&quot;/img/posts/2020-12-13-tartanvo/trans.png&quot; alt=&quot;scale&quot; /&gt;
+ &lt;figcaption&gt;
+   Comparison of the loss curve w/ and w/o up-to-scale loss function. a) The training and testing loss w/o the up-to-scale loss. b) The translation and rotation loss of a). Big gap exists between the training and testing translation losses (orange arrow in b)). c) The training and testing losses w/ up-to-scale loss. d) The translation and rotation losses of c). The translation loss gap decreases.
+ &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;3). We create an intrinsics layer (IL) in our VO model enabling generalization across different cameras.&lt;/p&gt;
+
+&lt;figure&gt;
+ &lt;img src=&quot;/img/posts/2020-12-13-tartanvo/architec2.png&quot; alt=&quot;architecture&quot; /&gt;
+ &lt;figcaption&gt;
+  The two-stage network architecture. The model consists of a matching network, which estimates optical flow from two consecutive RGB images, followed by a pose network predicting camera motion from the optical flow. We add a intrinsics layer to explicitly model the camera intrinsics. 
+ &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;To our knowledge, our model is the first learning-based VO that has competitive performance in various real-world datasets without finetuning. Furthermore, compared to geometry-based methods, our model is significantly more robust in challenging scenes.&lt;/p&gt;
+
+&lt;p&gt;We tested the model on the challenging sequences of TartanAir dataset.&lt;/p&gt;
+
+&lt;figure&gt;
+ &lt;img src=&quot;/img/posts/2020-12-13-tartanvo/tartan_SH_trajs.png&quot; alt=&quot;tartanair results&quot; /&gt;
+ &lt;figcaption&gt;
+  The black dashed line represents the ground truth. The estimated trajectories by TartanVO and the ORB-SLAM monocular algorithm are shown in orange and blue lines, respectively. The ORB-SLAM algorithm frequently loses tracking in these challenging cases. It fails in 9/16 testing trajectories. Note that we run full-fledge ORB-SLAM with local bundle adjustment, global bundle adjustment, and loop closure components. In contrast, although TartanVO only takes in two images, it is much more robust than ORB-SLAM.
+ &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Our model can be applied to the EuRoC dataset without any finetuning.&lt;/p&gt;
+
+&lt;figure&gt;
+ &lt;img src=&quot;/img/posts/2020-12-13-tartanvo/euroc_trajs.png&quot; alt=&quot;euroc results&quot; /&gt;
+ &lt;figcaption&gt;
+  The visualization of 6 EuRoC trajectories in Table 3. Black: ground truth trajectory, orange: estimated trajectory
+ &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;We also test the TartanVO using data collected by a customized senor setup.&lt;/p&gt;
+
+&lt;figure&gt;
+ &lt;img src=&quot;/img/posts/2020-12-13-tartanvo/realsense3.png&quot; alt=&quot;realsense results&quot; /&gt;
+ &lt;figcaption&gt;
+   TartanVO outputs competitive results on D345i IR data compared to T265 (equipped with fish-eye stereo camera and an IMU). a) The hardware setup. b) Trail 1: smooth and slow motion. c) Trail 2: smooth and medium speed. d) Trail 3: aggressive and fast motion. 
+ &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&quot;source-code-and-dataset&quot;&gt;Source Code and Dataset&lt;/h3&gt;
+
+&lt;p&gt;We provide the TartanVO model and a ROS node implementation &lt;a href=&quot;https://github.com/castacks/tartanvo&quot;&gt;here&lt;/a&gt;. We are using the TartanAir dataset, which can be accessed from the AirLab &lt;a href=&quot;http://theairlab.org/tartanair-dataset&quot;&gt;dataset page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;videos&quot;&gt;Videos&lt;/h3&gt;
+
+&lt;div class=&quot;video-wrapper&quot;&gt;&lt;iframe src=&quot;http://www.youtube.com/embed/NQ1UEh3thbU&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;publication&quot;&gt;Publication&lt;/h3&gt;
+
+&lt;p&gt;This work has been accepted by the Conference on Robot Learning (CoRL) 2020. Please see &lt;a href=&quot;https://arxiv.org/pdf/2011.00359.pdf&quot;&gt;the paper&lt;/a&gt; for more details.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@article{tartanvo2020corl,
+  title =   {TartanVO: A Generalizable Learning-based VO},
+  author =  {Wang, Wenshan and Hu, Yaoyu and Scherer, Sebastian},
+  booktitle = {Conference on Robot Learning (CoRL)},
+  year =    {2020}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;contact&quot;&gt;Contact&lt;/h3&gt;
+
+&lt;p&gt;Wenshan Wang - (wenshanw [at] andrew [dot] cmu [dot] edu)&lt;/p&gt;
+
+&lt;p&gt;Yaoyu Hu - (yaoyuh [at] andrew [dot] cmu [dot] edu)&lt;/p&gt;
+
+&lt;p&gt;Sebastian Scherer - (basti [at] cmu [dot] edu)&lt;/p&gt;
+
+&lt;h3 id=&quot;acknowledgments&quot;&gt;Acknowledgments&lt;/h3&gt;
+
+&lt;p&gt;This work was supported by ARL award #W911NF1820218. Special thanks to Yuheng Qiu and Huai Yu from Carnegie Mellon University for preparing simulation results and experimental setups.&lt;/p&gt;</content><author><name>Wenshan Wang</name></author><category term="research" /><summary type="html">Visual odometry remains a challenging problem in real-world applications. Geometric-based methods are not robust enough to many real-life factors, including illumination change, bad weather, dynamic objects, and aggressive motion. Learning-based methods do not generalize well and have only been trained and tested on the same dataset.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://theairlab.org/img/posts/2020-12-13-tartanvo/tartanvo_web_header.gif" /><media:content medium="image" url="https://theairlab.org/img/posts/2020-12-13-tartanvo/tartanvo_web_header.gif" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Autonomous UAV Landing on a Moving Vehicle and Real-Time Ellipse Detection</title><link href="https://theairlab.org/landing-on-vehicle/" rel="alternate" type="text/html" title="Autonomous UAV Landing on a Moving Vehicle and Real-Time Ellipse Detection" /><published>2020-12-06T10:50:07+00:00</published><updated>2020-12-06T10:50:07+00:00</updated><id>https://theairlab.org/landing</id><content type="html" xml:base="https://theairlab.org/landing-on-vehicle/">&lt;p&gt;The autonomous landing of an Unmanned Aerial Vehicle (UAV) on moving platforms has been an active area of research for several years. The applications include safer landing of aircraft on the ship, more efficient delivery networks and entertainment. Some of the key challenges of the problem include dealing with environmental conditions, such as changes in light and wind, and robust detection of the landing zone. The subsequent maneuver in trying to land also needs to take care of the potential ground effects at the proximity of the landing surface.&lt;/p&gt;
+
+&lt;p&gt;We have developed a method to autonomously land an Unmanned Aerial Vehicle on a moving vehicle with a circular (or elliptical) pattern on the top. A visual servoing controller is developed to approach the ground vehicle using velocity commands calculated directly in image space. The control laws generate velocity commands in all three dimensions, eliminating the need for a separate height controller. Our method has shown the ability to approach and land on the moving deck in simulation, indoor and outdoor environments, and compared to the other available methods, it has provided the fastest landing approach. It does not rely on additional external setup, such as RTK, motion capture system, ground station, offboard processing or communication with the ground vehicle, and it requires only the minimal set of hardware and localization sensors.&lt;/p&gt;
+
+&lt;p&gt;Additionally, we propose a new algorithm for real-time detection and tracking of elliptic patterns suitable for real-world robotics applications. The method fits ellipses to each contour in the image frame and rejects ellipses that do not yield a good fit. It can detect complete, partial, and imperfect ellipses in extreme weather and lighting conditions and is lightweight enough to be used on robots’ resource-limited onboard computers. The method is used on in the autonomous UAV landing to show its performance indoors, outdoors, and in simulation on a real-world robotics task. The comparison with other well-known ellipse detection methods shows that our proposed algorithm outperforms other methods with the F1 score of 0.981 on a dataset with over 1500 frames. The videos of experiments, the source codes, and the collected dataset are provided with the paper.&lt;/p&gt;
+
+&lt;p&gt;For more details about the methods, dataset and the project, please refer to the publication section below.&lt;/p&gt;
+
+&lt;h3 id=&quot;source-code-and-dataset&quot;&gt;Source Code and Dataset&lt;/h3&gt;
+
+&lt;p&gt;The project code base and the collected datasets can be accessed from the AirLab’s BitBucket: &lt;a href=&quot;https://bitbucket.org/account/user/castacks/projects/MBZIRC&quot;&gt;https://bitbucket.org/account/user/castacks/projects/MBZIRC&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;A good starting point is the &lt;a href=&quot;https://bitbucket.org/castacks/mbzirc_documents/wiki/Home&quot;&gt;documents repository&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;More specifically, the code base for the ellipse detection can be found &lt;a href=&quot;https://bitbucket.org/castacks/mbzirc_commons/&quot;&gt;here&lt;/a&gt; and the code showing how to use the ellipse detector is available &lt;a href=&quot;https://bitbucket.org/castacks/mbzirc_decktrack&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The collected dataset for the elliptic pattern is available &lt;a href=&quot;http://bit.ly/airlabmbzdataset&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Please refer to the publication section below for more details and the proper citation.&lt;/p&gt;
+
+&lt;h3 id=&quot;videos&quot;&gt;Videos&lt;/h3&gt;
+
+&lt;p&gt;The following videos show the proposed elliptic pattern detection method in real scenarios. The videos only show the detection method performed on the frames without the added information from the flight or the vehicle movement.&lt;/p&gt;
+
+&lt;div class=&quot;video-wrapper&quot;&gt;&lt;iframe src=&quot;http://www.youtube.com/embed/CzR-4aqlOhQ&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+&lt;div class=&quot;video-wrapper&quot;&gt;&lt;iframe src=&quot;http://www.youtube.com/embed/shWToIHk9Bw&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+&lt;p&gt;The following video shows the autonomous UAV landing approach on the vehicle moving at 15 km/h in a simulated environment.&lt;/p&gt;
+
+&lt;div class=&quot;video-wrapper&quot;&gt;&lt;iframe src=&quot;http://www.youtube.com/embed/2Eeh3ZXxK0A&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+&lt;p&gt;The following videos show the autonomous UAV landing on the vehicle moving at 15 km/h in outdoors settings with and without the magnets on the legs.&lt;/p&gt;
+
+&lt;div class=&quot;video-wrapper&quot;&gt;&lt;iframe src=&quot;http://www.youtube.com/embed/xs1R44dH96M&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+&lt;div class=&quot;video-wrapper&quot;&gt;&lt;iframe src=&quot;http://www.youtube.com/embed/TCAcf4XN6sE&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+&lt;div class=&quot;video-wrapper&quot;&gt;&lt;iframe src=&quot;http://www.youtube.com/embed/tn7wpeSXgFw&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+&lt;p&gt;The following video shows the autonomous UAV landing on the platform moving at ~8 km/h indoors.&lt;/p&gt;
+
+&lt;div class=&quot;video-wrapper&quot;&gt;&lt;iframe src=&quot;http://www.youtube.com/embed/QNGihlpGRAk&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+&lt;p&gt;The following video shows 11 consecutive trials to test the robustness of the autonomous UAV landing on the moving platform indoors. One of the trials fails due to the perception problem (not detecting the landing zone).&lt;/p&gt;
+
+&lt;div class=&quot;video-wrapper&quot;&gt;&lt;iframe src=&quot;http://www.youtube.com/embed/fcsfQqqfA-4&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;publication&quot;&gt;Publication&lt;/h3&gt;
+
+&lt;p&gt;A publication on the ellipse detection and tracking method is under review in RA-L/IROS 2021. It includes the details of our novel real-time ellipse detection method for robotics applications and releases the the dataset created from an elliptic pattern on top of a vehicle moving at 15 km/h for testing real-time ellipse detection methods.&lt;/p&gt;
+
+&lt;p&gt;Please cite the publication if our dataset or ellipse detection method is used in your research (access on &lt;a href=&quot;https://arxiv.org/abs/2102.12670&quot;&gt;arXiv&lt;/a&gt;):&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;BibTeX:&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@article{keipour:ellipse:2021,
+author={Azarakhsh Keipour and Guilherme A.S. Pereira and Sebastian Scherer},
+title={Real-Time Ellipse Detection for Robotics Applications},
+journal = {IEEE Robotics and Automation Letters},
+year={in press},
+pages={1-7},
+link={https://arxiv.org/abs/2102.12670},
+} 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;IEEE Style:&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;A. Keipour, G.A.S. Pereira, and S. Scherer, “Real-Time Ellipse Detection for Robotics Applications,” IEEE Robotics and Automation Letters, Under review. 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The publication on the whole approach is available on arXiv. It includes the details of our visual servoing approach for autonomous UAV landing on a moving vehicle.&lt;/p&gt;
+
+&lt;p&gt;Please cite the publication if any part of this project is used in your research (access on &lt;a href=&quot;https://arxiv.org/abs/2104.01272&quot;&gt;arXiv&lt;/a&gt;):&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;BibTeX:&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@article{keipour:landing:2021,
+author={Azarakhsh Keipour and Guilherme A.S. Pereira and Rogerio Bonatti and Rohit Garg and Puru Rastogi and Geetesh Dubey and Sebastian Scherer},
+title={Visual Servoing Approach for Autonomous UAV Landing on a Moving Vehicle},
+journal = {arXiv},
+year={2021},
+pages={1-24},
+link={https://arxiv.org/abs/2104.01272},
+} 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;IEEE Style:&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;A. Keipour, G.A.S. Pereira, R. Bonatti, R. Garg, P. Rastogi, G. Dubey, and S. Scherer, “Visual Servoing Approach for Autonomous UAV Landing on a Moving Vehicle,” arXiv, eprint 2104.01272, 2021. 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;contact&quot;&gt;Contact&lt;/h3&gt;
+
+&lt;p&gt;Azarakhsh Keipour - (keipour [at] cmu [dot] edu)&lt;/p&gt;
+
+&lt;p&gt;Guilherme A.S. Pereira - (guilherme.pereira [at] mail [dot] wvu [dot] edu)&lt;/p&gt;
+
+&lt;p&gt;Sebastian Scherer - (basti [at] cmu [dot] edu)&lt;/p&gt;
+
+&lt;h3 id=&quot;acknowledgments&quot;&gt;Acknowledgments&lt;/h3&gt;
+
+&lt;p&gt;This work was supported by Carnegie Mellon University Robotics Institute and Mohamed Bin Zayed International Robotics Challenge.&lt;/p&gt;</content><author><name>Azarakhsh Keipour</name></author><category term="research" /><summary type="html">The autonomous landing of an Unmanned Aerial Vehicle (UAV) on moving platforms has been an active area of research for several years. The applications include safer landing of aircraft on the ship, more efficient delivery networks and entertainment. Some of the key challenges of the problem include dealing with environmental conditions, such as changes in light and wind, and robust detection of the landing zone. The subsequent maneuver in trying to land also needs to take care of the potential ground effects at the proximity of the landing surface.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://theairlab.org/img/posts/2019-08-01-landing/visual-servoing-landing.jpg" /><media:content medium="image" url="https://theairlab.org/img/posts/2019-08-01-landing/visual-servoing-landing.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Long-range Aircraft Detection and Tracking</title><link href="https://theairlab.org/aircraft-detection/" rel="alternate" type="text/html" title="Long-range Aircraft Detection and Tracking" /><published>2020-11-30T00:00:00+00:00</published><updated>2020-11-30T00:00:00+00:00</updated><id>https://theairlab.org/aircraft-detection</id><content type="html" xml:base="https://theairlab.org/aircraft-detection/">&lt;hr /&gt;
+
+&lt;p&gt;The detect-and-avoid problem is the “holy grail” for small aircrafts and drones that need to fly beyond line-of-sight. Delivery drones in particular need to ensure self-separation from other aircraft to ensure safety. While it may seem that aircrafts could be detected via transponders, they are often not available on many aircrafts and even if they are, the rules and regulations do not make it necessary for them to be switched on at all times. Additionally, other flying objects such as birds, balloons, and other drones don’t have transponders. Therefore it is necessary to detect and avoid these objects for fully autonomous flights. Currently, the only effective sensor for aircraft detection is radar, but it is too heavy and expensive for small drones which have size, weight, and power (SWaP) constraints. These constraints even limit LiDAR ranges to be around 100m. For high-speed obstacle avoidance in dynamic environments, objects must be detected at long ranges (&amp;gt;= 500m) to allow sufficient reaction time. Fig. 1 shows a cartoon illustration of the problem. Thus, the aim of this project is to create a vision-based aircraft detection and tracking system that focuses primarily on long-range detection.&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;/img/posts/2020-11-30-aircraft-detection/problem_illustration.png&quot; /&gt;
+  &lt;figcaption&gt;
+    &lt;b&gt;Fig. 1:&lt;/b&gt; The LiDAR range being constrained to 100m allows for a small reaction time of 2 seconds and can potentially lead to a collision.
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;challenges&quot;&gt;Challenges&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;Detecting aircrafts at long ranges comes with a lot of challenges. Some of these are outlined as follows:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;b&gt;Low SnR&lt;/b&gt;: Aircrafts or other flying objects at long ranges appear very small and typically have very low signal-to-noise (SnR) ratios (see Fig. 2)&lt;/li&gt;
+  &lt;li&gt;&lt;b&gt;Poor performance on small objects&lt;/b&gt;: The state-of-the-art in object detection keeps changing ever so frequently and the standard benchmarks such as &lt;a href=&quot;https://cocodataset.org/#home&quot;&gt;COCO&lt;/a&gt; are always being beaten from time to time as more complex models are created. However, the performance of these detectors on small objects (\(&amp;lt; 32^2\) px\(^2\)) is pretty poor as they have low average precision and recall. In the context of our work, the performance is even worse since most of our data consists of small objects.&lt;/li&gt;
+  &lt;li&gt;&lt;b&gt;Computational constraints&lt;/b&gt;: The SOTA detectors are typically very complex in terms of the number of learnable parameters and they usually work on low to moderate image resolutions. Since our context is small objects primarily, we need to operate on high-res 2K images. Such images cannot be processed without downsampling by modern detectors.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;/img/posts/2020-11-30-aircraft-detection/inflight_img_bbox_large_overlayed.png&quot; style=&quot;width:45%&quot; /&gt;
+  &lt;img src=&quot;/img/posts/2020-11-30-aircraft-detection/inflight_img_bbox_small_overlayed.png&quot; style=&quot;width:45%&quot; /&gt;
+  &lt;figcaption&gt;
+    &lt;b&gt;Fig. 2:&lt;/b&gt; Visualization of the aircraft bounding box for short (left image) and long (right image) distances. At long ranges the SnR is really poor.
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;approach&quot;&gt;Approach&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;In order to tackle the aforementioned challenges of the detection problem, we created a fully convolutional neural network (FCN) that predicts segmentation maps of objects in the scene. The network consists of a 4-layer deep encoder and decoder with lateral skip connections across layers with similar depth level. The encoder-decoder module is then stacked sequentially three times to create an Hourglass network (which have shown good results in keypoint detection tasks). The advantage of using a FCN is that it can scale across variable resolutions and work on high-res 2K images. It can be thought of as a convolutional sliding window. The model complexity of such a network is also low compared to existing SOTA detectors and can thus be efficiently deployed in resource-constrained embedded systems. In our first results we show that such a network increases the average recall (or the ability to detect all relevant objects) of the system compared to fine-tuned models of existing SOTA detectors such as RetinaNet, YOLO, etc., but at the cost of lowering the average precision (or the ability to minimize the false positive rate). In order to compensate for the loss in precision, we used &lt;a href=&quot;https://arxiv.org/pdf/1602.00763.pdf&quot;&gt;SORT&lt;/a&gt; as a multi-object tracker to get rid of false positives that are not consistent across frames. Since there is a dearth of publicly available datasets for aircraft detection at long-ranges, we initiated a three-stage data collection strategy:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Simulation data from &lt;a href=&quot;https://www.x-plane.com/&quot;&gt;X-Plane 11&lt;/a&gt; which has ground truth bounding boxes and segmentation masks&lt;/li&gt;
+  &lt;li&gt;Real-world data from a static fisheye degree camera (along with ADS-B) at KBTP airport.&lt;/li&gt;
+  &lt;li&gt;Real-world inflight data from a Cessna.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure&gt;
+  &lt;iframe src=&quot;https://drive.google.com/file/d/136Dhf095O-yysoGrWbiVn9o4rTNwWqYM/preview&quot; width=&quot;640&quot; height=&quot;480&quot;&gt;&lt;/iframe&gt;
+  &lt;figcaption&gt;
+    Compilation of simulation data collected from X-Plane
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;The ADS-B data consists of information about other aircrafts in the vicinity of the camera and hence can be used for post-processing to auto-generate ground truth labels for the real-world datasets. Our team is currently working on creating the autolabeler. Meanwhile, we have trained our FCN detector using data from X-Plane. We train the detector by taking \(64\times 64\) crops from high-res training images. Fig. 3 shows a batch of training data.&lt;/p&gt;
+&lt;figure&gt;
+  &lt;img src=&quot;/img/posts/2020-11-30-aircraft-detection/training_images.png&quot; /&gt;
+  &lt;figcaption&gt;
+    &lt;b&gt;Fig. 3:&lt;/b&gt; 64x64 crops of training images and their corresponding ground truth masks from our X-Plane dataset.
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;Since there is huge class imbalance problem (because aircrafts typically appear as a small speck in the image), we minimize a weighted sum of cross-entropy and DICE loss during training.&lt;/p&gt;
+
+&lt;h2 id=&quot;first-results-in-simulation&quot;&gt;First Results in Simulation&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;We carried out some qualitative and quantitative study on the simulation dataset. Fig. 4 shows an example result of the hourglass FCN model. We observe that the hourglass model iteratively refines the prediciton (i.e., reduces the false positives) as the layer depth increases.&lt;/p&gt;
+&lt;figure&gt;
+  &lt;img src=&quot;/img/posts/2020-11-30-aircraft-detection/hourglass.png&quot; /&gt;
+  &lt;figcaption&gt;
+    &lt;b&gt;Fig. 4:&lt;/b&gt; Prediction results of the hourglass FCN model at each hourglass layer. Final layer HG3 contains less false positives.
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&quot;qualitative-results&quot;&gt;Qualitative Results&lt;/h3&gt;
+
+&lt;p&gt;We compared our results with a fine-tuned model of RetinaNet which is a SOTA detector.&lt;/p&gt;
+&lt;figure&gt;
+  &lt;iframe src=&quot;https://drive.google.com/file/d/1ahOA-AB41pxQBtu38gpG7UFvJBh5cXS5/preview&quot; width=&quot;640&quot; height=&quot;480&quot;&gt;&lt;/iframe&gt;
+  &lt;figcaption&gt;
+    Detection results using RetinaNet
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+  &lt;iframe src=&quot;https://drive.google.com/file/d/1xmHEO6ljuAgneB0MZsdhFrqeQ3aXe8IM/preview&quot; width=&quot;640&quot; height=&quot;480&quot;&gt;&lt;/iframe&gt;
+  &lt;figcaption&gt;
+    Detection results using the FCN hourglass model
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+  &lt;iframe src=&quot;https://drive.google.com/file/d/1kVHOEWWNJoodbeOdx85NVZLcZq6Jr6JQ/preview&quot; width=&quot;640&quot; height=&quot;480&quot;&gt;&lt;/iframe&gt;
+  &lt;figcaption&gt;
+    Detection results using the FCN hourglass model + SORT
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;We observe that RetinaNet sometimes misses the smaller objects which are picked up by the FCN model.&lt;/p&gt;
+
+&lt;h3 id=&quot;qualitative-results-1&quot;&gt;Qualitative Results&lt;/h3&gt;
+
+&lt;p&gt;Fig. 5 and 6 shows the quantitative results of the average recall measured against the object range and bounding box area.&lt;/p&gt;
+&lt;figure&gt;
+  &lt;img src=&quot;/img/posts/2020-11-30-aircraft-detection/retinanet_quant.png&quot; /&gt;
+  &lt;figcaption&gt;
+    &lt;b&gt;Fig. 5:&lt;/b&gt; RetinaNet: Average detection recall vs. range and bounding box area
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+  &lt;img src=&quot;/img/posts/2020-11-30-aircraft-detection/segnet_quant.png&quot; /&gt;
+  &lt;figcaption&gt;
+    &lt;b&gt;Fig. 6:&lt;/b&gt; FCN hourglass: Average detection recall vs. range and bounding box area
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;We observe that for really small objects (&amp;lt; 100 px\(^2\) area), the FCN model has a much higher recall compared to RetinaNet. The overall average recall for RetinaNet was 0.43 whereas the average recall for the FCN hourglass model was 0.85. The average precision for the RetinaNet was 0.27. The average precision for the FCN model without the SORT tracker is 0.058 (which is extremely low, indicating many false positives) but with the SORT tracker increases to 0.388.&lt;/p&gt;
+
+&lt;h2 id=&quot;project-members&quot;&gt;Project Members&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/team/sebastian/&quot;&gt;Prof. Sebastian Scherer&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/team/sourish/&quot;&gt;Sourish Ghosh&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/team/jay/&quot;&gt;Jay Patrikar&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/team/bradym/&quot;&gt;Brady Moon&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Ojit Mehta&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;acknowledgement&quot;&gt;Acknowledgement&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;We would like to express our gratitude to &lt;a href=&quot;https://www.mhi.com&quot;&gt;Mitsubishi Heavy Industries, Ltd.&lt;/a&gt; for generously funding this work.&lt;/p&gt;</content><author><name>Sourish Ghosh and Jay Patrikar</name></author><category term="research" /><summary type="html">The detect-and-avoid problem is the “holy grail” for small aircrafts and drones that need to fly beyond line-of-sight. Delivery drones in particular need to ensure self-separation from other aircraft to ensure safety. While it may seem that aircrafts could be detected via transponders, they are often not available on many aircrafts and even if they are, the rules and regulations do not make it necessary for them to be switched on at all times. Additionally, other flying objects such as birds, balloons, and other drones don’t have transponders. Therefore it is necessary to detect and avoid these objects for fully autonomous flights. Currently, the only effective sensor for aircraft detection is radar, but it is too heavy and expensive for small drones which have size, weight, and power (SWaP) constraints. These constraints even limit LiDAR ranges to be around 100m. For high-speed obstacle avoidance in dynamic environments, objects must be detected at long ranges (&amp;gt;= 500m) to allow sufficient reaction time. Fig. 1 shows a cartoon illustration of the problem. Thus, the aim of this project is to create a vision-based aircraft detection and tracking system that focuses primarily on long-range detection.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://theairlab.org/img/posts/2020-11-30-aircraft-detection/cover.gif" /><media:content medium="image" url="https://theairlab.org/img/posts/2020-11-30-aircraft-detection/cover.gif" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">In-flight positional and energy use dataset of package delivery quadcopter UAVs</title><link href="https://theairlab.org/energy-dataset/" rel="alternate" type="text/html" title="In-flight positional and energy use dataset of package delivery quadcopter UAVs" /><published>2020-10-23T10:50:07+00:00</published><updated>2020-10-23T10:50:07+00:00</updated><id>https://theairlab.org/drone-energy-data</id><content type="html" xml:base="https://theairlab.org/energy-dataset/">&lt;p&gt;This dataset included the energy usage for hundreds of drone flights in varying configurations and conditions.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;This experiment was performed in order to empirically measure the energy use of small, electric Unmanned Aerial Vehicles (UAVs). We autonomously direct a DJI ® Matrice 100 (M100) drone to take off, carry a range of payload weights on a triangular flight pattern, and land. Between flights, we varied specified parameters through a set of discrete options, payload of 0 , 250 g and 500 g; altitude during cruise of 25 m, 50 m, 75 m and 100 m; and speed during cruise of 4 m/s, 6 m/s, 8 m/s, 10 m/s and 12 m/s.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The number of flights performed varying operational parameters (payload, altitude, speed) was 195. In addition, 14 recordings were done to assess the drone’s ancillary power and hover conditions.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;More information about the data collection process, conditions, and methodology can be found through the dataset link and its accompanying README file.&lt;/p&gt;
+
+&lt;!-- ### Publications
+
+The tools and the dataset are provided with a publication ([PDF available on arXiv](https://arxiv.org/abs/1907.06268)). Please use the following citation if you use either the tools or the dataset: 
+
+*BibTeX:* 
+
+```
+@article{keipour:dataset:2019,
+author={Azarakhsh Keipour and Mohammadreza Mousaei and Sebastian Scherer},
+title={ALFA: A Dataset for UAV Fault and Anomaly Detection},
+journal = {The International Journal of Robotics Research},
+volume = {},
+number = {},
+pages = {},
+year = {In press},
+}
+```
+
+*IEEE Style:* 
+
+```
+A. Keipour, M. Mousaei, and S. Scherer, “ALFA: A dataset for UAV fault and anomaly detection,” The International Journal of Robotics Research, In press. 
+```
+
+&lt;br/&gt;
+
+Please contact us if you encounter issues or to ask additional questions.  --&gt;
+&lt;h3 id=&quot;download&quot;&gt;Download&lt;/h3&gt;
+
+&lt;p&gt;The dataset can be accessed through this link:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://doi.org/10.1184/R1/12683453.v2&quot;&gt;https://doi.org/10.1184/R1/12683453.v2&lt;/a&gt;&lt;/p&gt;
+
+&lt;!-- &lt;iframe src=&quot;https://widgets.figshare.com/articles/12683453/embed?show_title=true&quot; width=&quot;568&quot; height=&quot;351&quot; allowfullscreen frameborder=&quot;0&quot;&gt;&lt;/iframe&gt; --&gt;
+
+&lt;h3 id=&quot;contact&quot;&gt;Contact&lt;/h3&gt;
+
+&lt;p&gt;Thiago A. Rodrigues - tarodrig@andrew.cmu.edu&lt;/p&gt;
+
+&lt;p&gt;Jay Patrikar - jpatrika@andrew.cmu.edu&lt;/p&gt;
+
+&lt;h3 id=&quot;acknowledgments&quot;&gt;Acknowledgments&lt;/h3&gt;
+
+&lt;p&gt;This work was supported by the U.S. Department of Energy’s Vehicle Technologies Office, Award Number DE-EE0008463.&lt;/p&gt;</content><author><name>Brady Moon</name></author><category term="datasets" /><summary type="html">This dataset included the energy usage for hundreds of drone flights in varying configurations and conditions.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://theairlab.org/img/posts/2020-10-15-drone-energy-data/doe_energy.jpg" /><media:content medium="image" url="https://theairlab.org/img/posts/2020-10-15-drone-energy-data/doe_energy.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Exploiting Physical Interactions to Increase the Understanding of Dynamics and Environment Properties for Enhanced Autonomy</title><link href="https://theairlab.org/Intuitive%20Physics/" rel="alternate" type="text/html" title="Exploiting Physical Interactions to Increase the Understanding of Dynamics and Environment Properties for Enhanced Autonomy" /><published>2020-08-26T10:50:07+00:00</published><updated>2020-08-26T10:50:07+00:00</updated><id>https://theairlab.org/intuitive-physics</id><content type="html" xml:base="https://theairlab.org/Intuitive%20Physics/">&lt;hr /&gt;
+
+&lt;p&gt;The mobility of autonomous robots is still limited especially in real-world offroad terrain (as shown in the videos). We propose to enhance the autonomy of intelligent robots by actively learning the physical common sense and dynamic models of complex objects. This will enable these robots to automatically identify, understand and avoid difficult situations in adversarial environments, by learning physical models and robust skills in unstructured environments.&lt;/p&gt;
+
+&lt;div class=&quot;video-wrapper&quot;&gt;&lt;iframe src=&quot;http://www.youtube.com/embed/um6AMVG8GXs&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+&lt;div class=&quot;video-wrapper&quot;&gt;&lt;iframe src=&quot;http://www.youtube.com/embed/zFzgL-3h2Ok&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;objectives&quot;&gt;Objectives&lt;/h3&gt;
+&lt;p&gt;In particular, we will focus on&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Learning persistent 3D feature representations and intuitive physical models of objects and scenes through embodied observation&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Learning dynamic models based on persistent 3D visual feature representations and hierarchical prediction through active interaction;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Creating robust and safe planning methods for autonomous mobile robots based on learned 3D representations and physics models. These aims will be tightly integrated into a coherent system that will be evaluated with a series of simulations as well as field experiments of increasing complexity.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This project will significantly advance scientific knowledge in machine learning (active learning, self-supervised learning, multi-modal learning, hierarchical reinforcement learning) and robotics (navigation, obstacle avoidance, model-based control).  In practice, it will push the limits of robot mobility in adversarial environments, and enable them to enter more difficult types of terrain.&lt;/p&gt;
+
+&lt;p&gt;Specifically, we will focus on the following three objectives that address key barriers for robust autonomy:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Learning by observation&lt;/strong&gt;: Learning persistent 3D feature representations and intuitive physical models of objects and scenes through embodied observation.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Learning by interaction&lt;/strong&gt;:Learning action-conditioned dynamic models based on persistent 3D visual feature representations and hierarchical prediction through active interaction.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Planning with learned representations and physics models&lt;/strong&gt;: Creating robust and safe planning methods for autonomous mobile robots based on the learned 3D representations and physics models as well as choosing information gathering actions (active learning).&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure&gt;
+ &lt;img src=&quot;/img/posts/2020-08-26-intuitive-physics/image1.png&quot; alt=&quot;three key aims&quot; /&gt;
+ &lt;figcaption&gt;
+    The three key aims of this project. Using photo-realistic and physically correct simulation (supervised) and real-life (self-supervised, and unsupervised) observations and interactions are made. Those data are used to update the models and plan the next actions. The plans are actively exploring to improve the models in addition to achieving the desired goal (active learning). 
+ &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&quot;approaches&quot;&gt;Approaches&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Similar to how a child starts to perceive and build a model of the world, we aim to learn the basic concept of intuitive physics. In particular, we will learn the concept of objects by moving and observing them in the environment.  Based on encoding the visual input into a persistent 3D feature representation using GRNNs one can detect 3D objects.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure&gt;
+ &lt;img src=&quot;/img/posts/2020-08-26-intuitive-physics/image2.png&quot; alt=&quot;app1&quot; /&gt;
+ &lt;figcaption&gt;
+    
+ &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;We will consider utilizing hierarchical models to make more precise and long-term prediction. More importantly, we will show how to generalize our approach from simulation to the real world, while minimizing the amount of required labeled data and to minimize the number of interactions required&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;We propose a novel HRL framework, that allows the robot to learn from its past experience and expert demonstration within the same framework. The hierarchical physical models learned in Section 5.2 allow us to perform RL at multiple levels. The low level RL handles short-term goals reactively, while the high level RL plans in an abstract space for long-term goals.  As the learning proceeds, the robot continually learns to solve new tasks and distill new skills (temporal abstraction of actions).&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;project-members&quot;&gt;Project Members&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.wangwenshan.com/&quot;&gt;Wenshan Wang&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Katerina Fragkiadaki&lt;/li&gt;
+  &lt;li&gt;Max Yin&lt;/li&gt;
+  &lt;li&gt;Xian Zhou&lt;/li&gt;
+  &lt;li&gt;Sebastian Scherer&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Junbin Yuan and Wenshan Wang</name></author><category term="research" /><summary type="html">The mobility of autonomous robots is still limited especially in real-world offroad terrain (as shown in the videos). We propose to enhance the autonomy of intelligent robots by actively learning the physical common sense and dynamic models of complex objects. This will enable these robots to automatically identify, understand and avoid difficult situations in adversarial environments, by learning physical models and robust skills in unstructured environments.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://theairlab.org/img/posts/2020-08-26-intuitive-physics/cover_figure.png" /><media:content medium="image" url="https://theairlab.org/img/posts/2020-08-26-intuitive-physics/cover_figure.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Real-time Fault Detection for Autonomous Aerial Vehicles</title><link href="https://theairlab.org/fault-detection/" rel="alternate" type="text/html" title="Real-time Fault Detection for Autonomous Aerial Vehicles" /><published>2020-07-15T10:50:07+00:00</published><updated>2020-07-15T10:50:07+00:00</updated><id>https://theairlab.org/fault-detection</id><content type="html" xml:base="https://theairlab.org/fault-detection/">&lt;p&gt;The recent increase in the use of aerial vehicles raises concerns about the safety and reliability of autonomous operations. There is a growing need for methods to monitor the status of these aircraft and report any faults and anomalies to the safety pilot or to the autopilot to deal with the emergency situation.&lt;/p&gt;
+
+&lt;p&gt;In this project, we developed a real-time approach to detecting anomalies in the behavior of an aircraft. Additionally, we created and published a dataset of the 47 flight sequences where the anomalies happen. Our anomaly detection method is based on the Recursive Least Squares. The approach models the relationship between correlated input-output pairs online and uses the model to detect the anomalies. The result is an easy-to-deploy anomaly detection method that does not assume a specific aircraft model and can detect many types of faults and anomalies in a wide range of autonomous aircraft. The experiments on this method show a precision of 88.23%, recall of 88.23% and 86.36% accuracy for over 22 flight tests. For more details about the work, please refer to the publications below.&lt;/p&gt;
+
+&lt;p&gt;More information about the dataset is available &lt;a href=&quot;../alfa-dataset&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;video-wrapper&quot;&gt;&lt;iframe src=&quot;http://www.youtube.com/embed/HCtGbnqjKj8&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;source-code&quot;&gt;Source Code&lt;/h3&gt;
+
+&lt;p&gt;An early version of the source code for the method written in C++ (with ROS Kinetic) can be accessed from &lt;a href=&quot;https://bitbucket.org/castacks/online_system_identification/&quot;&gt;here&lt;/a&gt;. The code can be used with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rosbag&lt;/code&gt; files in the ALFA dataset without any modification.&lt;/p&gt;
+
+&lt;h3 id=&quot;publications&quot;&gt;Publications&lt;/h3&gt;
+
+&lt;p&gt;The real-time anomaly detection method for the autonomous aerial vehicles is described in the following publication (access on &lt;a href=&quot;https://arxiv.org/abs/1907.00511&quot;&gt;arXiv&lt;/a&gt; or &lt;a href=&quot;https://ieeexplore.ieee.org/document/8794286&quot;&gt;IEEE Xplore&lt;/a&gt;):&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;BibTeX:&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@inproceedings{keipour:detection:2019,
+author={Azarakhsh Keipour and Mohammadreza Mousaei and Sebastian Scherer},
+booktitle={2019 IEEE International Conference on Robotics and Automation (ICRA)},
+title={Automatic Real-time Anomaly Detection for Autonomous Aerial Vehicles},
+year={2019},
+month={May},
+pages={5679-5685},
+doi={10.1109/ICRA.2019.8794286}
+} 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;IEEE Style:&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;A. Keipour, M. Mousaei, and S. Scherer, “Automatic Real-time Anomaly Detection for Autonomous Aerial Vehicles,” in 2019 IEEE International Conference on Robotics and Automation (ICRA), May 2019, pp.5679-5685. doi: 10.1109/ICRA.2019.8794286. 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;The dataset is described &lt;a href=&quot;../alfa-dataset&quot;&gt;here&lt;/a&gt; and in the following publication (access on &lt;a href=&quot;https://arxiv.org/abs/1907.06268&quot;&gt;arXiv&lt;/a&gt; or &lt;a href=&quot;https://doi.org/10.1177/0278364920966642&quot;&gt;The International Journal of Robotics Research website&lt;/a&gt;):&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;BibTeX:&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@article{keipour:dataset:2019,
+author={Azarakhsh Keipour and Mohammadreza Mousaei and Sebastian Scherer},
+title={ALFA: A Dataset for UAV Fault and Anomaly Detection},
+journal = {The International Journal of Robotics Research},
+volume = {0},
+number = {0},
+pages = {1-6},
+month = {October},
+year = {2020},
+doi = {10.1177/0278364920966642},
+URL = {https://doi.org/10.1177/0278364920966642},
+eprint = {https://doi.org/10.1177/0278364920966642}
+} 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;IEEE Style:&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;A. Keipour, M. Mousaei, and S. Scherer, “ALFA: A dataset for UAV fault and anomaly detection,” The International Journal of Robotics Research, vol. 0. no.  0,  pp.  1–6,  October  2020.  [Online]. Available:https://doi.org/10.1177/0278364920966642
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;contact&quot;&gt;Contact&lt;/h3&gt;
+
+&lt;p&gt;Azarakhsh Keipour - (keipour [at] cmu [dot] edu)&lt;/p&gt;
+
+&lt;p&gt;Mohammadreza Mousaei - (mmousaei [at] cmu [dot] edu)&lt;/p&gt;
+
+&lt;p&gt;Sebastian Scherer - (basti [at] cmu [dot] edu)&lt;/p&gt;
+
+&lt;h3 id=&quot;acknowledgments&quot;&gt;Acknowledgments&lt;/h3&gt;
+
+&lt;p&gt;This work was supported through NASA Grant Number NNX17CL06C.&lt;/p&gt;</content><author><name>Azarakhsh Keipour</name></author><category term="research" /><summary type="html">The recent increase in the use of aerial vehicles raises concerns about the safety and reliability of autonomous operations. There is a growing need for methods to monitor the status of these aircraft and report any faults and anomalies to the safety pilot or to the autopilot to deal with the emergency situation.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://theairlab.org/img/posts/2019-08-01-fault-detection/AnomalyDetection2018.jpg" /><media:content medium="image" url="https://theairlab.org/img/posts/2019-08-01-fault-detection/AnomalyDetection2018.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
