@@ -44,7 +44,10 @@ Our dataset includes hardware time-synchronized data from 4 RGB cameras, 1 LiDAR
     Lidar_Inertial_Track
     ├── SubT_Systems_1
     │   ├── rosbags
-    │   │   └── [...]yyyy-mm-dd-hh-mm-ss[...].bag
+    │   │   ├── raw_sensor_data
+    │   │   │   └── raw_data_yyyy-mm-dd-hh-mm-ss[...].bag
+    │   │   └── super_odometry_results
+    │   │       └── so_result_yyyy-mm-dd-hh-mm-ss[...].bag
     │   ├── folders
     │   │   ├── raw_sensor_data
     │   │   │   ├── imu
