@@ -133,8 +133,33 @@ This will aid in a comprehensive evaluation of the algorithms and showcase their
 |Block_LiDAR    |SubT-MRS|Hawkins|SP1|RGB,LiDAR,IMU|Lidar Degraded|307.55|677|[link](https://youtu.be/2r4Z1XKTJHs)| [Google](https://drive.google.com/file/d/1NscQVVsQc_CN-16O_VLpLQnmTWgBmf93/view?usp=drive_link) Baidu | [Google](https://drive.google.com/file/d/1zCqwibpnmJ6I9lv29OUEnjyK2SxN4TbV/view?usp=drive_link) Baidu |
 
 ## Evaluation 
-The submission will be ranked based on Absolute Trajectory Error (ATE) and Relative Pose Error (RPE). Specifically, The ATE and RPE of every trajectory in the lidar inertial track and its bonus track will be evaluated. The final score for a submitted trajectory will be assigned according to which interval the weighted sum of the ATE and RPE lies in.  
+The submission is evaluated based on Absolute Trajectory Error (ATE) and Relative Pose Error (RPE). Specifically, The root-mean-square error (RMSE) of ATE and RPE of every trajectory in the lidar inertial track and its bonus track will be evaluated. The final score for a submitted trajectory will be assigned according to the following rule. 
 
+$$
+\begin{aligned}
+Score_{ATE,RPE} = \ 20 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RMSE \le 1.0 \ m \\
+10 \ \ \ \ \ 1.0 \ m < RMSE \le 2.0 \ m \\
+6 \ \ \ \ \ 2.0 \ m < RMSE \le 3.0 \ m \\
+5 \ \ \ \ \ 3.0 \ m < RMSE \le 4.0 \ m \\
+3 \ \ \ \ \ 4.0 \ m < RMSE \le 5.0 \ m \\
+1 \ \ \ \ \ 5.0 \ m < RMSE \le 6.0 \ m \\
+0 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RMSE > 6.0 \ m \\
+\end{aligned}
+$$
+
+What's more, we will also evaluate the trajectory based on a velocity error (VE) metric. VE is calculated by measuring the velocity difference sampled at a fixed frequency between the submitted trajectory and our groundtruth trjectory. The velocity of your submitted trajectory will be calculated by performing a B-spline interpolation and approximating the instant velocity by the average velocity in short time intervals. As a substitution, you can also submit a velocity file (instructions for this is coming soon). At every sampled point, the velocity difference will be transformed to a score according to the following rule. The RMSE of the per-point scores will be calculated to obtain the final VE score. 
+
+$$
+\begin{aligned}
+Score_{point_i} = \ 20 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ error_{point_i} \le 0.5 \ m/s \\
+10 \ \ \ \ \ 0.5 \ m/s < error_{point_i} \le 1.0 \ m/s \\
+6 \ \ \ \ \ 1.0 \ m/s < error_{point_i}\le 1.5 \ m/s \\
+5 \ \ \ \ \ 1.5 \ m/s < error_{point_i} \le 2.0 \ m/s \\
+3 \ \ \ \ \ 2.0 \ m/s < error_{point_i} \le 2.5 \ m/s \\
+1 \ \ \ \ \ 2.5 \ m/s < error_{point_i} \le 3.0 \ m/s \\
+0 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ error_{point_i} > 6.0 \ m/s \\
+\end{aligned}
+$$
 
 <!-- 
 1. The following metrics will be used to evaluate the SLAM algorithms' performance:
